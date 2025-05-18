@@ -1,0 +1,23 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite" // Use "postgresql" for production
+  url      = "file:./dev.db"
+}
+
+model User {
+  id                 String   @id @default(uuid())
+  fullName           String
+  email              String   @unique
+  course             String
+  level              Int
+  signature          String   // base64 or path to signature
+  registrationNumber String   @unique
+  date               DateTime
+  qrCode             String   // Could also be optional if not always generated
+  expiryDate         DateTime
+  createdAt          DateTime @default(now())
+}
+
