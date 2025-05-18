@@ -112,7 +112,7 @@ const CertificateForm = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-black p-4 sm:p-8">
+    <div className="min-h-screen bg-white text-slate-700 to-black p-4 sm:p-8">
       <div className="max-w-4xl mx-auto space-y-8">
         {/* Logo */}
         <div className="flex justify-center">
@@ -126,7 +126,7 @@ const CertificateForm = () => {
           transition={{ duration: 0.8 }}
           className="text-center space-y-4"
         >
-          <h1 className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">
+          <h1 className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-slate-900 to-slate-700">
            Spatial and Data Science Association of Nigeria.
           </h1>
           <p className="text-gray-400 text-lg">
@@ -145,7 +145,7 @@ const CertificateForm = () => {
             visible: { opacity: 1, transition: { staggerChildren: 0.2 } },
           }}
         >
-          <motion.h2 className="text-2xl font-semibold text-white flex items-center gap-2" variants={itemVariants}>
+          <motion.h2 className="text-2xl font-semibold text-slate-900 flex items-center gap-2" variants={itemVariants}>
             <FilePlus className="w-6 h-6 text-blue-400" />
             Registration Form
           </motion.h2>
@@ -160,7 +160,7 @@ const CertificateForm = () => {
               { id: 'levelCompleted', label: 'Level Completed (1-5)', icon: <TrendingUp className="w-4 h-4" />, type: 'number' },
             ].map(({ id, label, icon, type }) => (
               <div key={id} className="space-y-2">
-                <label htmlFor={id} className="text-gray-300 flex items-center gap-1.5">
+                <label htmlFor={id} className="text-slate-900 flex items-center gap-1.5">
                   {icon}
                   {label}
                 </label>
@@ -171,7 +171,7 @@ const CertificateForm = () => {
                   value={formData[id as keyof typeof formData]}
                   onChange={handleChange}
                   placeholder={`Enter your ${label.toLowerCase()}`}
-                  className="w-full px-4 py-2 bg-black/20 text-white border border-purple-500/30 rounded-md placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500"
+                  className="w-full px-4 py-2 bg-black/20 text-slate-900 border border-purple-500/30 rounded-md placeholder:text-gray-500 focus:outline-none focus:ring-2 focus:ring-purple-500"
                   required
                 />
               </div>
@@ -179,7 +179,7 @@ const CertificateForm = () => {
 
             {/* Signature */}
             <div className="space-y-2">
-              <label className="text-gray-300 flex items-center gap-1.5">
+              <label className="text-slate-900 flex items-center gap-1.5">
                 <Signature className="w-4 h-4" />
                 Draw Your Signature
               </label>
@@ -205,11 +205,11 @@ const CertificateForm = () => {
               type="submit"
               disabled={isSubmitting}
               className={cn(
-                'w-full sm:w-auto bg-gradient-to-r from-purple-500 to-blue-500 text-white',
+                'w-full sm:w-auto  text-slate-900',
                 'px-6 py-3 rounded-full shadow-lg hover:shadow-xl hover:scale-105 transition-all',
                 'font-semibold text-lg flex items-center justify-center gap-2',
                 isSubmitting && 'opacity-70 cursor-not-allowed',
-                submissionStatus === 'success' && 'bg-green-500 from-green-500 to-green-500'
+                submissionStatus === 'success' && 'bg-slate-500 from-green-500 to-green-500'
               )}
             >
               {isSubmitting ? 'Generating...' : 'Generate Certificate'}

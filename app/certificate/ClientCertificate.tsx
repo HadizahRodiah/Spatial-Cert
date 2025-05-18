@@ -226,7 +226,7 @@ const CertificateDisplay: React.FC = () => {
     }
 
     return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-900 via-indigo-900 to-black p-4 sm:p-6 flex flex-col items-center">
+    <div className="min-h-screen bg-white p-4 sm:p-6 flex flex-col items-center">
         <div className="container mx-auto px-2 sm:px-4 lg:px-6 py-4">
             <div
                 ref={certificateRef}
@@ -297,15 +297,15 @@ const CertificateDisplay: React.FC = () => {
                     <DocumentPlusIcon className="h-4 w-4 sm:h-5 sm:w-5" />
                     {loading ? 'Downloading...' : 'Download'}
                 </button>
-                <button onClick={handlePrint} disabled={loading} className="flex items-center gap-2 bg-green-600 hover:bg-green-700 text-white px-3 py-2 rounded-md font-semibold shadow-md text-sm sm:text-base">
+                <button onClick={handlePrint} disabled={loading} className="flex items-center gap-2 bg-white-600 hover:bg-slate-900 text-black  hover:text-white  px-3 py-2 rounded-md font-semibold shadow-md text-sm sm:text-base">
                     <PrinterIcon className="h-4 w-4 sm:h-5 sm:w-5" />
                     Print
                 </button>
-                <button onClick={handleShare} disabled={loading} className="flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white px-3 py-2 rounded-md font-semibold shadow-md text-sm sm:text-base">
+                <button onClick={handleShare} disabled={loading} className="flex items-center gap-2 bg-slate-600 hover:bg-purple-700 text-white px-3 py-2 rounded-md font-semibold shadow-md text-sm sm:text-base">
                     <ShareIcon className="h-4 w-4 sm:h-5 sm:w-5" />
                     {loading ? 'Sharing...' : 'Share'}
                 </button>
-                <button onClick={handleVerifyCertificate} className="flex items-center gap-2 bg-yellow-500 hover:bg-yellow-600 text-black px-3 py-2 rounded-md font-semibold shadow-md text-sm sm:text-base">
+                <button onClick={handleVerifyCertificate} className="flex items-center gap-2 bg-white t-500 hover:bg-yellow-600 text-black px-3 py-2 rounded-md font-semibold shadow-md text-sm sm:text-base">
                     <CheckCircleIcon className="h-4 w-4 sm:h-5 sm:w-5" />
                     Verify
                 </button>
